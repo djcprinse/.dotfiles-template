@@ -18,16 +18,16 @@ here you can add your own configuration. Below you can find a list of currently 
 ├── README.md
 ├── git
 │    ├── .gitconfig
-│         └── .gitconfig_template 
+│    └── .gitconfig_template
 ├── installation
+│    ├── install.sh
 │    ├── bootstrap-macos.sh
 │    ├── generic
 │    │    ├── git.sh
 │    │    └── ssh.sh
-│    ├── install.sh
 │    └── macos
-│        ├── applications.sh
-│        └── development-tools.sh
+│         ├── applications.sh
+│         └── development-tools.sh
 ├── ssh
 │    └── config
 └── zsh
