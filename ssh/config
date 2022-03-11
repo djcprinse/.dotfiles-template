@@ -5,3 +5,4 @@
 Host x.y.z
  HostName x.y.z
  IdentityFile ~/.ssh/template/id_ed25519
+ IdentitiesOnly yes
