@@ -1,2 +1,2 @@
-[includeIf "gitdir:~/.dotfiles-template/"]
-    path = .gitconfig_template
+#[includeIf "gitdir:~/.dotfiles-template/"]
+#    path = .gitconfig_template

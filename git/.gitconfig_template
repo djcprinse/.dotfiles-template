@@ -1,3 +1,12 @@
-[user]
-    name =
-    email =
+#[user]
+#    name =
+#    email =
+#    signingKey = ~/.ssh/github/id_ed25519
+#[commit]
+#    gpgsign = true
+#[tag]
+#    gpgsign = true
+#[gpg]
+#    format = ssh
+#[gpg "ssh"]
+#    allowedSignersFile = ~/.dotfiles-template/git/allowed_signers_github
