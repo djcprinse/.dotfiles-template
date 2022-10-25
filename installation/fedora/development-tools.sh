@@ -1,11 +1,11 @@
 #!/bin/bash
 
-brew_packages='lorem'
-brew_packages_optional=''
+dnf_packages=''
+dnf_packages_optional=''
 
 # -----------------------------------------------
 # Programming Languages, Frameworks and CLI tools
 # -----------------------------------------------
 
 echo 'Installing packages'
-brew install "${brew_packages}" "${brew_packages_optional}"
+sudo dnf install -y ${dnf_packages} ${dnf_packages_optional}

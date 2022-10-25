@@ -4,7 +4,11 @@
 # Configure .gitconfig
 # ---------------------------------------------
 
-echo "Add .gitconfig [include] option to $HOME/.gitconfig"
-echo '[include]' >> $HOME/.gitconfig
-echo 'path = ~/.dotfiles-template/git/.gitconfig' >> $HOME/.gitconfig
-echo >> $HOME/.gitconfig
+if ! grep -q 'dotfiles-template' "${HOME}/.gitconfig"; then
+  echo "Add .gitconfig [include] option to ${HOME}/.gitconfig"
+  {
+    echo '[include]'
+    echo 'path = ~/.dotfiles-template/git/.gitconfig'
+    echo
+  } >> "${HOME}/.gitconfig"
+fi

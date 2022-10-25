@@ -4,14 +4,19 @@
 # Configure SSH configuration
 # ---------------------------------------------
 
-echo 'Create template ssh key directory'
-mkdir $HOME/.ssh/template/
-read -p 'Do you want to generate a ssh key for your template account? (y/n) [y]? ' CONT
+read -r -p 'Do you want to generate a ssh key for your template account? (y/n) [y]? ' CONT
 CONT=${CONT:-'y'}
-if [[ $CONT == 'y' ]]; then
+if [[ "${CONT}" == 'y' ]]; then
+  if [ ! -d "${HOME}/.ssh/template/" ]; then
+    echo 'Create template ssh key directory'
+    mkdir -p "${HOME}/.ssh/template/"
+  fi
   ssh-keygen -t ed25519 -a 100 -f ~/.ssh/template/id_ed25519 -C ""
 fi
 
 echo 'Symlink ssh configuration'
-rm $HOME/.ssh/config.d/template
-ln -s $HOME/.dotfiles-template/ssh/config $HOME/.ssh/config.d/template
+if [ -f "${HOME}/.ssh/config.d/template" ]; then
+  rm "${HOME}/.ssh/config.d/template"
+fi
+ln -s "${HOME}/.dotfiles-template/ssh/config" "${HOME}/.ssh/config.d/template"
+chmod 600 "${HOME}/.ssh/config.d/template"
